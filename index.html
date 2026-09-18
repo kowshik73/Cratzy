@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Cartzy - Shop electronics, fashion, accessories and everyday products online.">
+    <meta name="theme-color" content="#2563eb">
+
+    <title>Cartzy - Online Shopping</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        <span>Cart</span>zy
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="login-btn" onclick="openLogin()">
+            Login
+        </button>
+
+        <button class="signup-btn" onclick="openSignup()">
+            Sign Up
+        </button>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒 Cart
+            <span id="cart-count">0</span>
+        </button>
+
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Shop Smart.<br>
+            Shop <span>Cartzy.</span>
+        </h1>
+
+        <p>
+            Discover quality products, exciting deals and everyday
+            essentials — all in one simple shopping experience.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="shop-now">
+                Shop Now
+            </a>
+
+            <a href="#about" class="learn-more">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="feature-box">
+        <div class="feature-icon">🚚</div>
+        <div>
+            <h3>Fast Delivery</h3>
+            <p>Quick and reliable delivery.</p>
+        </div>
+    </div>
+
+    <div class="feature-box">
+        <div class="feature-icon">🔒</div>
+        <div>
+            <h3>Secure Shopping</h3>
+            <p>Your shopping experience matters.</p>
+        </div>
+    </div>
+
+    <div class="feature-box">
+        <div class="feature-icon">💳</div>
+        <div>
+            <h3>Easy Checkout</h3>
+            <p>Simple and convenient ordering.</p>
+        </div>
+    </div>
+
+    <div class="feature-box">
+        <div class="feature-icon">⭐</div>
+        <div>
+            <h3>Quality Products</h3>
+            <p>Products for everyday needs.</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products-section" id="products">
+
+    <div class="section-heading">
+
+        <span>OUR COLLECTION</span>
+
+        <h2>Explore Our Products</h2>
+
+        <p>
+            Browse our collection of electronics, fashion,
+            accessories and everyday essentials.
+        </p>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="search-container">
+
+        <input
+            type="search"
+            id="search"
+            placeholder="🔍 Search products..."
+            oninput="searchProducts()"
+        >
+
+    </div>
+
+
+    <!-- Category Buttons -->
+
+    <div class="categories">
+
+        <button onclick="filterProducts('all')" class="category active">
+            All
+        </button>
+
+        <button onclick="filterProducts('electronics')" class="category">
+            Electronics
+        </button>
+
+        <button onclick="filterProducts('fashion')" class="category">
+            Fashion
+        </button>
+
+        <button onclick="filterProducts('accessories')" class="category">
+            Accessories
+        </button>
+
+        <button onclick="filterProducts('home')" class="category">
+            Home
+        </button>
+
+    </div>
+
+
+    <!-- Products -->
+
+    <div class="products" id="product-list">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card"
+             data-name="Wireless Headphones"
+             data-category="electronics">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80"
+                    alt="Wireless Headphones"
+                >
+
+                <span class="product-badge">
+                    Popular
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Electronics
+                </span>
+
+                <h3>Wireless Headphones</h3>
+
+                <p>
+                    Comfortable wireless headphones with
+                    clear sound and modern design.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.8</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹1,999</strong>
+
+                    <button onclick="addToCart('Wireless Headphones', 1999)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card"
+             data-name="Smart Watch"
+             data-category="electronics">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
+                    alt="Smart Watch"
+                >
+
+                <span class="product-badge">
+                    New
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Electronics
+                </span>
+
+                <h3>Smart Watch</h3>
+
+                <p>
+                    Stylish smartwatch for notifications,
+                    fitness tracking and everyday use.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.7</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹2,499</strong>
+
+                    <button onclick="addToCart('Smart Watch', 2499)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card"
+             data-name="Running Shoes"
+             data-category="fashion">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+                    alt="Running Shoes"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Fashion
+                </span>
+
+                <h3>Running Shoes</h3>
+
+                <p>
+                    Lightweight and comfortable running
+                    shoes designed for everyday activity.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.6</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹1,799</strong>
+
+                    <button onclick="addToCart('Running Shoes', 1799)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card"
+             data-name="Backpack"
+             data-category="accessories">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80"
+                    alt="Backpack"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Accessories
+                </span>
+
+                <h3>Everyday Backpack</h3>
+
+                <p>
+                    Spacious and durable backpack for
+                    school, work and travel.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.5</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹999</strong>
+
+                    <button onclick="addToCart('Everyday Backpack', 999)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product-card"
+             data-name="Laptop"
+             data-category="electronics">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80"
+                    alt="Laptop"
+                >
+
+                <span class="product-badge">
+                    Featured
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Electronics
+                </span>
+
+                <h3>Laptop</h3>
+
+                <p>
+                    Powerful laptop suitable for work,
+                    study, entertainment and everyday tasks.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.8</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹54,999</strong>
+
+                    <button onclick="addToCart('Laptop', 54999)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product-card"
+             data-name="Smartphone"
+             data-category="electronics">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=80"
+                    alt="Smartphone"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Electronics
+                </span>
+
+                <h3>Smartphone</h3>
+
+                <p>
+                    Modern smartphone with a sharp display
+                    and excellent camera experience.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.7</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹24,999</strong>
+
+                    <button onclick="addToCart('Smartphone', 24999)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="product-card"
+             data-name="Sunglasses"
+             data-category="fashion">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80"
+                    alt="Sunglasses"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Fashion
+                </span>
+
+                <h3>Classic Sunglasses</h3>
+
+                <p>
+                    Stylish sunglasses with a modern look
+                    for everyday outdoor use.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐☆
+                    <span>4.4</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹799</strong>
+
+                    <button onclick="addToCart('Classic Sunglasses', 799)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="product-card"
+             data-name="Digital Camera"
+             data-category="electronics">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=80"
+                    alt="Digital Camera"
+                >
+
+                <span class="product-badge">
+                    Popular
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Electronics
+                </span>
+
+                <h3>Digital Camera</h3>
+
+                <p>
+                    Capture memorable photos and videos
+                    with this versatile digital camera.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.6</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹39,999</strong>
+
+                    <button onclick="addToCart('Digital Camera', 39999)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 9 -->
+
+        <div class="product-card"
+             data-name="Casual Sneakers"
+             data-category="fashion">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=700&q=80"
+                    alt="Casual Sneakers"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Fashion
+                </span>
+
+                <h3>Casual Sneakers</h3>
+
+                <p>
+                    Comfortable sneakers with a clean
+                    and modern everyday design.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.5</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹1,499</strong>
+
+                    <button onclick="addToCart('Casual Sneakers', 1499)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 10 -->
+
+        <div class="product-card"
+             data-name="Gaming Keyboard"
+             data-category="electronics">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=80"
+                    alt="Gaming Keyboard"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Electronics
+                </span>
+
+                <h3>Gaming Keyboard</h3>
+
+                <p>
+                    RGB mechanical-style keyboard for
+                    gaming, work and entertainment.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.7</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹2,299</strong>
+
+                    <button onclick="addToCart('Gaming Keyboard', 2299)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 11 -->
+
+        <div class="product-card"
+             data-name="Coffee Mug"
+             data-category="home">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=700&q=80"
+                    alt="Coffee Mug"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Home
+                </span>
+
+                <h3>Coffee Mug</h3>
+
+                <p>
+                    Premium ceramic mug for coffee,
+                    tea and your everyday beverages.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.6</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹399</strong>
+
+                    <button onclick="addToCart('Coffee Mug', 399)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 12 -->
+
+        <div class="product-card"
+             data-name="Perfume"
+             data-category="accessories">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80"
+                    alt="Perfume"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="category-name">
+                    Accessories
+                </span>
+
+                <h3>Classic Perfume</h3>
+
+                <p>
+                    Elegant fragrance designed for
+                    everyday occasions and special moments.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <span>4.5</span>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>₹1,299</strong>
+
+                    <button onclick="addToCart('Classic Perfume', 1299)">
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <p id="no-products" class="no-products">
+        No products found.
+    </p>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <div class="about-text">
+
+            <span>ABOUT CARTZY</span>
+
+            <h2>
+                Shopping made simple.
+            </h2>
+
+            <p>
+                Cartzy is a modern online shopping website
+                designed to make discovering everyday products
+                simple and enjoyable.
+            </p>
+
+            <p>
+                From electronics and fashion to accessories
+                and home essentials, Cartzy brings different
+                product categories together in one convenient
+                place.
+            </p>
+
+            <div class="about-stats">
+
+                <div>
+                    <strong>12+</strong>
+                    <span>Products</span>
+                </div>
+
+                <div>
+                    <strong>4+</strong>
+                    <span>Categories</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Shopping</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="about-card-icon">
+                🛍️
+            </div>
+
+            <h3>
+                Everything in one place
+            </h3>
+
+            <p>
+                Search products, add items to your cart,
+                manage quantities and complete your checkout
+                from a simple and responsive interface.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="section-heading">
+
+        <span>GET IN TOUCH</span>
+
+        <h2>Contact Cartzy</h2>
+
+        <p>
+            Have a question? We'd love to hear from you.
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+                <span>📧</span>
+                <div>
+                    <h3>Email</h3>
+                    <p>support@cartzy.com</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>📞</span>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>📍</span>
+                <div>
+                    <h3>Location</h3>
+                    <p>India</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <form class="contact-form" onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                id="contact-name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="contact-email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="contact-message"
+                placeholder="Your Message"
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="modal" id="login-modal">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closeModal('login-modal')">
+            &times;
+        </button>
+
+        <h2>Welcome Back</h2>
+
+        <p class="modal-subtitle">
+            Login to your Cartzy account
+        </p>
+
+        <form onsubmit="login(event)">
+
+            <input
+                type="email"
+                id="login-email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                id="login-password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p class="modal-switch">
+            Don't have an account?
+            <a href="#" onclick="switchToSignup()">
+                Sign Up
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SIGNUP MODAL ================= -->
+
+<div class="modal" id="signup-modal">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closeModal('signup-modal')">
+            &times;
+        </button>
+
+        <h2>Create Account</h2>
+
+        <p class="modal-subtitle">
+            Join Cartzy today
+        </p>
+
+        <form onsubmit="signup(event)">
+
+            <input
+                type="text"
+                id="signup-name"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="signup-email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                id="signup-password"
+                placeholder="Password"
+                minlength="6"
+                required
+            >
+
+            <button type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="modal-switch">
+            Already have an account?
+            <a href="#" onclick="switchToLogin()">
+                Login
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CART MODAL ================= -->
+
+<div class="modal" id="cart-modal">
+
+    <div class="modal-content cart-content">
+
+        <button class="close" onclick="closeModal('cart-modal')">
+            &times;
+        </button>
+
+        <h2>Your Cart 🛒</h2>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-summary">
+
+            <div>
+                <span>Total Items</span>
+                <strong id="cart-total-items">0</strong>
+            </div>
+
+            <div>
+                <span>Total</span>
+                <strong>₹<span id="cart-total">0</span></strong>
+            </div>
+
+        </div>
+
+        <button class="checkout-btn" onclick="checkout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-column footer-brand">
+
+            <div class="footer-logo">
+                Cart<span>zy</span>
+            </div>
+
+            <p>
+                Your simple and convenient online shopping
+                destination for everyday products.
+            </p>
+
+            <div class="social-links">
+
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="YouTube">▶</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Categories</h3>
+
+            <a href="#products">Electronics</a>
+            <a href="#products">Fashion</a>
+            <a href="#products">Accessories</a>
+            <a href="#products">Home</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Customer Service</h3>
+
+            <a href="#contact">Help Center</a>
+            <a href="#contact">Contact Support</a>
+            <a href="#">Shipping Information</a>
+            <a href="#">Return Policy</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Why Cartzy?</h3>
+
+            <p>✓ Easy online shopping</p>
+            <p>✓ Multiple product categories</p>
+            <p>✓ Responsive design</p>
+            <p>✓ Simple cart system</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Cartzy. All rights reserved.
+        </p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
